@@ -147,3 +147,21 @@ Below is a list of commonly used Spring Boot Actuator endpoints and their descri
 > ⚠️ Note: Some endpoints may require enabling explicitly in `application.properties` or setting management roles for access.
 
 ---
+## 🔐 Spring Boot Security
+
+To prevent unauthorized access to sensitive endpoints or data, Spring Boot provides **built-in security** via the `spring-boot-starter-security` dependency.
+
+When added, it:
+
+- Automatically secures your application
+- Prompts users for login credentials before allowing access
+
+### 🔑 Setting Username & Password
+
+You can configure default login credentials in the `application.properties` file:
+
+```properties
+spring.security.user.name=admin
+spring.security.user.password=admin@123
+```
+---
