@@ -118,4 +118,32 @@ Two wrapper scripts are included:
 | Integration   | Works seamlessly with existing Spring ecosystem   |
 
 ---
+## 📊 Spring Boot Actuator
 
+Spring Boot Actuator **exposes endpoints** that help you **monitor and manage** your application.
+
+- Provides DevOps functionality **out of the box**
+- Just add the dependency to your `pom.xml`
+- REST endpoints are **automatically added** to your application
+
+---
+## 🔍 Common Spring Boot Actuator Endpoints
+
+Below is a list of commonly used Spring Boot Actuator endpoints and their descriptions:
+
+| Endpoint           | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| `/actuator`        | Lists all available actuator endpoints                                      |
+| `/actuator/health` | Shows application health status (can include disk, DB, etc.)                |
+| `/actuator/info`   | Displays custom application info (from `application.properties`)            |
+| `/actuator/metrics`| Shows available metrics (memory, GC, CPU, etc.)                             |
+| `/actuator/beans`  | Lists all Spring beans in the application context                           |
+| `/actuator/env`    | Displays current environment properties and config values                   |
+| `/actuator/mappings`| Shows all `@RequestMapping` paths in the app                               |
+| `/actuator/loggers`| View and modify logger levels at runtime                                    |
+| `/actuator/threaddump` | Returns a thread dump from the running JVM                             |
+| `/actuator/httptrace` | Shows last few HTTP request-response traces                              |
+
+> ⚠️ Note: Some endpoints may require enabling explicitly in `application.properties` or setting management roles for access.
+
+---
