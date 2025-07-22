@@ -37,7 +37,7 @@ Spring Boot is **not** a replacement for the Spring Framework. Instead, it's a r
 
 ### ❓ Does Spring Boot run faster than regular Spring?
 
-> **No**. It uses the same Spring Framework under the hood. The benefit lies in ease of setup and auto-configuration.
+> **No**. It uses the same Spring Framework under the hood. The benefit lies in ease of setup and autoconfiguration.
 
 ### ✅ What does Spring Boot do?
 
@@ -131,18 +131,18 @@ Spring Boot Actuator **exposes endpoints** that help you **monitor and manage** 
 
 Below is a list of commonly used Spring Boot Actuator endpoints and their descriptions:
 
-| Endpoint           | Description                                                                 |
-|--------------------|-----------------------------------------------------------------------------|
-| `/actuator`        | Lists all available actuator endpoints                                      |
-| `/actuator/health` | Shows application health status (can include disk, DB, etc.)                |
-| `/actuator/info`   | Displays custom application info (from `application.properties`)            |
-| `/actuator/metrics`| Shows available metrics (memory, GC, CPU, etc.)                             |
-| `/actuator/beans`  | Lists all Spring beans in the application context                           |
-| `/actuator/env`    | Displays current environment properties and config values                   |
-| `/actuator/mappings`| Shows all `@RequestMapping` paths in the app                               |
-| `/actuator/loggers`| View and modify logger levels at runtime                                    |
-| `/actuator/threaddump` | Returns a thread dump from the running JVM                             |
-| `/actuator/httptrace` | Shows last few HTTP request-response traces                              |
+| Endpoint               | Description                                                      |
+|------------------------|------------------------------------------------------------------|
+| `/actuator`            | Lists all available actuator endpoints                           |
+| `/actuator/health`     | Shows application health status (can include disk, DB, etc.)     |
+| `/actuator/info`       | Displays custom application info (from `application.properties`) |
+| `/actuator/metrics`    | Shows available metrics (memory, GC, CPU, etc.)                  |
+| `/actuator/beans`      | Lists all Spring beans in the application context                |
+| `/actuator/env`        | Displays current environment properties and config values        |
+| `/actuator/mappings`   | Shows all `@RequestMapping` paths in the app                     |
+| `/actuator/loggers`    | View and modify logger levels at runtime                         |
+| `/actuator/threaddump` | Returns a thread dump from the running JVM                       |
+| `/actuator/httptrace`  | Shows last few HTTP request-response traces                      |
 
 > ⚠️ Note: Some endpoints may require enabling explicitly in `application.properties` or setting management roles for access.
 
@@ -164,4 +164,30 @@ You can configure default login credentials in the `application.properties` file
 spring.security.user.name=admin
 spring.security.user.password=admin@123
 ```
+---
+## 💻 Running Spring Boot Application from the Command Line
+
+1. Using the packaged JAR
+  - Run `./mvnw package` then `java -jar target/your-app-name.jar`
+  - This compiles your code, creates a JAR in the `target/` directory, and launches the app as a standalone Java application.
+
+2. Using the Spring Boot plugin
+  - Run `./mvnw spring-boot:run`
+  - This skips packaging, compiles your code and starts the application in one step—ideal for rapid local development.  
+
+---
+## ⚙️ Spring Boot Properties
+
+Spring Boot provides **1000+ configurable properties** that can be set in the `application.properties` file.
+
+You can configure:
+
+- `server.port` – to change the default port
+- `server.servlet.context-path` – to set a custom context path
+- Actuator settings
+- Security settings
+- Many more...
+
+This allows fine-grained control over your application's behavior without changing the code.
+
 ---
